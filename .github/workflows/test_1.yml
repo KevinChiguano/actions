@@ -23,7 +23,8 @@ jobs:
 
   other:
     runs-on: ubuntu-latest
-
+    #directiva para esperar que un job culmine para ejecutar
+    needs: [hola]
     steps:
       - name: LS
         run: ls -al
