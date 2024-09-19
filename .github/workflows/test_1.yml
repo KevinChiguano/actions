@@ -6,7 +6,7 @@ on: [push]
 #ejecutar todo lo que se necesite en el servidor
 jobs:
   hola:
-    runs=on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Hola Mundo
