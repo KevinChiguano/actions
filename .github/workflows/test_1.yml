@@ -1,7 +1,7 @@
 name: Hola Mundo
 
 #para ejecutar el workflow
-on: [push]
+on: [push, pull_request]
 
 #ejecutar todo lo que se necesite en el servidor
 jobs:
