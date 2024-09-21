@@ -1,7 +1,13 @@
 name: Hola Mundo
 
 #para ejecutar el workflow
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 #ejecutar todo lo que se necesite en el servidor
 jobs:
@@ -26,5 +32,8 @@ jobs:
     #directiva para esperar que un job culmine para ejecutar
     needs: [hola]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.7    
       - name: LS
         run: ls -al
+
