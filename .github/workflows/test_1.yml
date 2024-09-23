@@ -1,14 +1,14 @@
 name: Hola Mundo
 
 #para ejecutar el workflow
-on: 
-  push:
-    branches:
-      - main
-      - pr2
-  pull_request:
-    branches:
-      - main
+on: [push]
+%on: 
+%  push:
+%    branches:
+%      - main
+%  pull_request:
+%    branches:
+%      - main
 
 #ejecutar todo lo que se necesite en el servidor
 jobs:
@@ -33,5 +33,14 @@ jobs:
 
       - name: node version
         run: node --version
+
+      - name: PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      
+      - name: node version
+        run: php --version
+
             
 
