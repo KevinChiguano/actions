@@ -10,5 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      -name: ls
+      - name: ls
         uses: ./.github/actions/my-action
+        with: 
+          message: "Kevin"
