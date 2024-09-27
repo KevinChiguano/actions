@@ -27,3 +27,17 @@ jobs:
 
       - name: Install packages
         run: composer install --no-interaction
+
+      - name: Run test
+        id: test
+        run: vendor/bin/phpunit
+
+      - name: deploy
+        if: steps.test.outcome == 'success'
+        run: ls
+
+      - name: Artifact
+        uses: actions/upload-artifact@v3
+        with: 
+          name: artifacts
+          path: composer.json
