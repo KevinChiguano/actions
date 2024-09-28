@@ -3,41 +3,11 @@ name: Laravel CI
 on: [push]
 
 jobs:
-  vue-test:
+  laravel-test:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:8.0
-        ports:
-          - 3086:3086
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: laravel
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      
-      - name: Set Up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.2
-          extentions: mbstring, bcmath, pdo, pdo_mysql
+      - name: ls
+        run: ls -al
 
-      - name: Install packages
-        run: composer install --no-interaction
-
-      - name: Run test
-        id: test
-        run: vendor/bin/phpunit
-
-      - name: deploy
-        if: steps.test.outcome == 'success'
-        run: ls
-
-      - name: Artifact
-        uses: actions/upload-artifact@v3
-        with: 
-          name: artifacts
-          path: composer.json
+  
