@@ -3,11 +3,11 @@ name: Test
 on: workflow_dispatch
 
 jobs: 
-  test-action:
+  test-build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: ls
