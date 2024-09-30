@@ -3,7 +3,7 @@ name: Test
 on: workflow_dispatch
 
 jobs: 
-  local-action:
+  test-action:
     runs-on: ubuntu-latest
 
     steps:
